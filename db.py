@@ -3,7 +3,8 @@ from pymongo.server_api import ServerApi
 
 from bson.objectid import ObjectId
 
-uri = "mongodb+srv://root2:doC123@example-cluster.xrbmras.mongodb.net/?retryWrites=true&w=majority"
+uri = "mongodb+srv://root2:doC123@myservercluster.7bw8olc.mongodb.net/?retryWrites=true&w=majority"
+
 
 #uri = "mongodb://localhost:27017"
 
@@ -11,10 +12,12 @@ uri = "mongodb+srv://root2:doC123@example-cluster.xrbmras.mongodb.net/?retryWrit
 client = MongoClient(uri, server_api=ServerApi('1'))
 try:
     client.admin.command('ping')
-    print("Pinged your deployment. You successfully connected to MongoDB!")
+    print("Mongo says DB connection successful")
 except Exception as e:
     print(e)
-#shopping_list_db = client.shopping_list_db
+
+
+stopandemic_collection = client.stopandemic
 
 def setup_database():
     shopping_list_db.drop_collection(shopping_list_db.items_collection)
