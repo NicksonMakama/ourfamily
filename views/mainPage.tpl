@@ -1,4 +1,3 @@
-<button id="me" onclick="myFunc()">Here</button>
 <div id="title">
     <h3>Welcome Doctor </h3>
     <p>This is a AI database system to help the world predict the possibiolity of the next Pandemic</p>
@@ -16,6 +15,7 @@
                 %for aData in sendDoctorData:
                     <tr>
                         <td>{{aData['Name']}}</td>
+                        <td><button id="me" onclick="myFunc()">Delete</button></td>
                     </tr>
                 %end
             </tbody>
