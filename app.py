@@ -1,10 +1,12 @@
-from bottle import route, post, run, template, redirect, request, static_file
+from bottle import Bottle, route, post, run, template, redirect, request, static_file
 
 import db
 
-@route('/css/<filename>')
+app = Bottle()
+
+@app.route("/css/<filename>")
 def stylesheets(filename):
-    return static_file(filename, root='./static/css/')
+    return static_file(filename, root='css')
 
 @route("/")
 def goto_home():
@@ -41,4 +43,4 @@ def post_update():
     db.update_item(id, description)
     redirect("/list")
 
-run(host='localhost', port=8080)
+run(host='localhost', port=8080, debug=True)
