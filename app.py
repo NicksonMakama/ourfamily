@@ -1,6 +1,10 @@
-from bottle import route, post, run, template, redirect, request
+from bottle import route, post, run, template, redirect, request, static_file
 
 import db
+
+@route('/css/<filename>')
+def stylesheets(filename):
+    return static_file(filename, root='./static/css/')
 
 @route("/")
 def goto_home():
