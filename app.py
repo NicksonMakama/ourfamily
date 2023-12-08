@@ -5,7 +5,7 @@ import db
 @route("/")
 def goto_home():
     doctorData = db.get_items()
-    return template('index', sendDoctorData=doctorData)
+    return template("index.tpl", sendDoctorData=doctorData)
 
 @route("/add")
 def get_add():

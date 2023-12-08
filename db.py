@@ -110,12 +110,12 @@ def test_update_item():
     items = get_items()
     original_description = items[1]['Name']
     original_id = items[1]['id']
-    update_item(original_id,"new-description")
+    update_item(original_id,"changeRose")
     items = get_items()
     found = False
     for item in items:
         if item['id'] == original_id:
-            assert item['Name'] == "new-description"
+            assert item['Name'] == "changeRose"
             found = True
     assert found
 

@@ -4,7 +4,7 @@
     <p>This is a AI database system to help the world predict the possibiolity of the next Pandemic</p>
 </div>
 <div id="mainPage">
-<pre>{{ sendDoctorData | tojson | safe }}</pre>
+
     <div class="table-responsive">
         <table class="table">
             <thead>
