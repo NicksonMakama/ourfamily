@@ -1,11 +1,29 @@
-<button id="me" onclick="myFunc()">Here</button>
-<div id="title">
-    <h3>OurFamily.com </h3>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stopandemic</title>
+    <!-- Include any common CSS files here -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+        <div id="container">
+            {{!include('nav')}}
+            {{!include('mainPage')}}
+            {{!include('sideBar')}}
+            {{!include('footer')}}
+        </div>
 
-<script type="text/javascript">
-function myFunc(){
 
-    document.getElementById("title").innerHTML = "now";
-}
-</script>
+        <!script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+         <script type="text/javascript">
+            function myFunc(){
+
+                document.getElementById("title").innerHTML = "now";
+            }
+        </script>
+</body>
+</html>
+
