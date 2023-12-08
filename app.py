@@ -2,10 +2,8 @@ from bottle import Bottle, route, post, run, template, redirect, request, static
 
 import db
 
-app = Bottle()
-
-@app.route("/css/<filename>")
-def stylesheets(filename):
+@route('/css/<filename>')
+def server_static(filename):
     return static_file(filename, root='css')
 
 @route("/")
@@ -43,4 +41,4 @@ def post_update():
     db.update_item(id, description)
     redirect("/list")
 
-run(host='localhost', port=8080, debug=True)
+run(host='localhost', port=8080)
