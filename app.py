@@ -6,6 +6,10 @@ import db
 def server_static(filename):
     return static_file(filename, root='css')
 
+@route('/images/<filename>')
+def server_static(filename):
+    return static_file(filename, root='images')
+
 @route("/")
 def goto_home():
     doctorData = db.get_items()
