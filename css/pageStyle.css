@@ -1,3 +1,28 @@
 
 h3{border:2px solid rgb(80, 6, 165);}
-body{background-color: blanchedalmond;}
+
+#mainPage .box{background-color: rgb(38, 85, 236);
+    border-radius:8px;
+    margin: 5px;
+    padding: 5%;
+    height: 120px;
+}
+#mainPage .box:hover{
+    background-color: rgb(249, 249, 252);
+    border: 2px solid blue;
+    
+}
+#mainPage .box:hover a{color:blue;}
+#mainPage .box a{
+    text-decoration: none;
+    
+}
+#mainPage .box a:hover{
+    
+    font-size: larger;
+}
+#mainPage .box2{background-color: rgb(230, 197, 14);}
+
+
+#mainPage .sectionTitles{font-size: 20px; color:white;
+    }

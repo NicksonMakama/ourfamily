@@ -7,22 +7,39 @@
         <div class="col-sm">
 
             <div id="forMainActivities1" class="row">
-                <div id="mainActDisease" class="col-sm">
+                <div id="mainActDisease" class="col-sm box">
                     <center>
                         <a href="" class="sectionTitles">View more Popular Disease in our Database</a>
 
                     </center>
                 </div>
-                <div id="mainActDoctor" class="col-sm">
+                <div id="mainActDoctor" class="col-sm box">
                     <center>
-                        <a href="" class="sectionTitles">View more Popular Doctors & Cases</a>
+                        <a href="" class="sectionTitles">View Doctors & Cases</a>
                     </center>
                 </div>
 
             </div>
 
             <div id="forMainActivities2"class="row">
-            
+                <div id="mainActDocSignUp" class="col-sm box box2">
+                    <i class="bi bi-search"></i>
+                    <center>
+                        <a href="" class="sectionTitles">Doctor's SignUp</a>
+
+                    </center>
+                </div>
+                <div id="mainActAddPatient" class="col-sm box">
+                    <center>
+                        <span class="bi bi-person"></span>
+                        <a href="" class="sectionTitles">Add Patient</a>
+                    </center>
+                </div>
+                <div id="mainActDoctor" class="col-sm box box2">
+                    <center>
+                        <a href="" class="sectionTitles">Add a Disease</a>
+                    </center>
+                </div>
             </div>
 
             <div id="forMainForm" class="row">
