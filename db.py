@@ -23,7 +23,7 @@ def setup_database():
     stopandemic_DB.drop_collection(stopandemic_DB.doctor)
     items_collection = stopandemic_DB.doctor
     for item in ['Nick', 'Paul', 'Rose']:
-        items_collection.insert_one({"Name":item})
+        items_collection.insert_one({"name":item})
 
 def get_items(id=None):
     items_collection = stopandemic_DB.doctor

@@ -14,7 +14,7 @@
             <tbody>
                 %for aData in sendDoctorData:
                     <tr>
-                        <td>{{aData['Name']}}</td>
+                        <td>{{aData['doctor_fname']}}</td>
                         <td><button id="me" onclick="myFunc()">Delete</button></td>
                     </tr>
                 %end
