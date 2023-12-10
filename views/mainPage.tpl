@@ -5,21 +5,52 @@
 <div id="mainPage">
     <div class="row">
         <div class="col-sm">
-            <div id="Add-case-title">Add A Case</div>
-            <>
+
+            <div id="forMainActivities1" class="row">
+                <div id="mainActDisease" class="col-sm">
+                    <center>
+                        <a href="" class="sectionTitles">View more Popular Disease in our Database</a>
+
+                    </center>
+                </div>
+                <div id="mainActDoctor" class="col-sm">
+                    <center>
+                        <a href="" class="sectionTitles">View more Popular Doctors & Cases</a>
+                    </center>
+                </div>
+
+            </div>
+
+            <div id="forMainActivities2"class="row">
+            
+            </div>
+
+            <div id="forMainForm" class="row">
+                <div id="Add-case-title">Add A Case</div>
+                <form>
+                    <div class="form-group">
+                        <label for="doctor_fname">First Name</label>
+                        <input id="doctor_fname" type="text" class="form-control" placeholder="FirstName"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
 
         </div>
+
         <div class="col-sm">
             World map and immerging diseases
             <img src="images/worldmap.png" class="img-fluid"></div>
         </div>
     </div>
+
+    <p> These cases from around the world are popular in our Database</p>
     <div class="row" id="cases-table">
         <div class="table-responsive">
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col"> Doctor's Name</th>
+                        <th scope="col"> Disease</th>
                     </tr>
                 </thead>
                 <tbody>
