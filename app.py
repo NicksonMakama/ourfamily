@@ -30,6 +30,11 @@ def get_delete(id):
     db.delete_item(id)
     redirect("/list")
 
+@route("/viewPage/<id>")
+def get_view(id):
+    items = db.get_items(id)
+    return template("viewPage.tpl",id=id)
+    
 @route("/update/<id>")
 def get_update(id):
     items = db.get_items(id)

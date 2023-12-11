@@ -37,7 +37,7 @@
                 </div>
                 <div id="mainActDoctor" class="col-sm box box2">
                     <center>
-                        <a href="" class="sectionTitles">Add a Disease</a>
+                        <a href="" class="sectionTitles">Add Disease</a>
                     </center>
                 </div>
             </div>
@@ -46,9 +46,20 @@
                 <div id="Add-case-title">Add A Case</div>
                 <form>
                     <div class="form-group">
-                        <label for="doctor_fname">First Name</label>
-                        <input id="doctor_fname" type="text" class="form-control" placeholder="FirstName"/>
+                        <label for="disease_code">Enter a code for this Disease</label>
+                        <input id="disease_code" type="text" class="form-control" placeholder="UNK_00"/>
                     </div>
+                    <div class="form-group">
+                        <label for="d_name">Disease Name</label>
+                        <input id="d_name" type="text" class="form-control" placeholder="UNKNOWN"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Describe the Symptoms</label>
+                        <textarea id="description" rows="4" cols="50" placeholder="UNKNOWN">
+                            Please give a brief description of the Symptoms
+                        </textarea>
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
@@ -74,7 +85,8 @@
                     %for aData in sendDoctorData:
                         <tr>
                             <td>{{aData['doctor_fname']}}</td>
-                            <td><button id="me" onclick="myFunc()">Delete</button></td>
+                            <td><a class="btn btn-danger" href="/viewPage/{{str(aData['id'])}}" onclick="myFunc()">See Details
+                            </a>
                         </tr>
                     %end
                 </tbody>
