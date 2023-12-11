@@ -9,10 +9,14 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap-icons.css" rel="stylesheet">
      <link  rel="stylesheet" href="css/pageStyle.css"/>
 </head>
-<body>
-        <div id="container-fluid">
+<body>  
+        <div id="container">
             %include('nav.tpl')
-            %include('mainPage.tpl')
+            %if signUpDoc:
+                %include('doctorSignUp.tpl')
+            %else:
+                %include('mainPage.tpl')
+            %end
             %include('sideBar.tpl')
             %include('footer.tpl')
         </div>

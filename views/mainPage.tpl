@@ -1,5 +1,5 @@
 <div id="title">
-    <h3>Welcome Doctor </h3>
+    <h3>Welcome Doctor </h3>%{{signUpDoc}}
     <p>This is a AI database system to help the world predict the possibiolity of the next Pandemic</p>
 </div>
 <div id="mainPage">
@@ -25,8 +25,7 @@
                 <div id="mainActDocSignUp" class="col-sm box box2">
                     <i class="bi bi-search"></i>
                     <center>
-                        <a href="" class="sectionTitles">Doctor's SignUp</a>
-
+                        <a href="/doctorSignUp" class="sectionTitles btn">Doctor's SignUp</a>
                     </center>
                 </div>
                 <div id="mainActAddPatient" class="col-sm box">

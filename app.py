@@ -13,11 +13,15 @@ def server_static(filename):
 @route("/")
 def goto_home():
     doctorData = db.get_items()
-    return template("index.tpl", sendDoctorData=doctorData)
+    return template("index.tpl", sendDoctorData=doctorData, signUpDoc=False)
 
 @route("/add")
 def get_add():
     return template("add_item.tpl")
+
+@route("/doctorSignUp")
+def doctorSignUp():
+    return template("index.tpl",signUpDoc=True)
 
 @post("/add")
 def post_add():
@@ -29,6 +33,9 @@ def post_add():
 def get_delete(id):
     db.delete_item(id)
     redirect("/list")
+
+
+
 
 @route("/viewPage/<disease_code>")
 def get_view(disease_code):
