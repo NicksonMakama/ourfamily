@@ -84,8 +84,9 @@
                 <tbody>
                     %for aData in sendDoctorData:
                         <tr>
-                            <td>{{aData['doctor_fname']}}</td>
-                            <td><a class="btn btn-danger" href="/viewPage/{{str(aData['id'])}}" onclick="myFunc()">See Details
+                            <td>{{aData['disease_name']}}</td>
+                            <td>{{aData['disease_code']}}</td>
+                            <td><a class="btn btn-danger" href="/viewPage/{{str(aData['disease_code'])}}" onclick="myFunc()">See Details
                             </a>
                         </tr>
                     %end

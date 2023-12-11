@@ -26,7 +26,7 @@ def setup_database():
         items_collection.insert_one({"name":item})
 
 def get_items(id=None):
-    items_collection = stopandemic_DB.doctor
+    items_collection = stopandemic_DB.disease
     if id == None:
         items = items_collection.find({})
     else:
@@ -35,6 +35,33 @@ def get_items(id=None):
     for item in items:
         item["id"] = str(item["_id"])
     return items
+
+def get_itemsDiseasePatient(disease_code):
+    patients_collection = stopandemic_DB.patient
+    patients_with_disease = patients_collection.aggregate([
+        {
+            "$match": {
+                "disease_code": disease_code
+            }
+        },
+        {
+            "$lookup": {
+                "from": "disease",
+                "localField": "disease_code",
+                "foreignField": "disease_code",
+                "as": "patientDisease"
+            }
+        },
+        {
+            "$project": {
+                "_id": 0,  # Exclude _id field
+                "patient_fname": 1  # Include patient_fname field
+            }
+        }
+    ])
+    
+    return list(patients_with_disease)
+
 
 
 def add_item(name):

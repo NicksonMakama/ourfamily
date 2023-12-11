@@ -30,10 +30,10 @@ def get_delete(id):
     db.delete_item(id)
     redirect("/list")
 
-@route("/viewPage/<id>")
-def get_view(id):
-    items = db.get_items(id)
-    return template("viewPage.tpl",id=id)
+@route("/viewPage/<disease_code>")
+def get_view(disease_code):
+    patientsWithDisease = db.get_itemsDiseasePatient(disease_code)
+    return template("viewPage.tpl",sendDiseaseData = patientsWithDisease)
     
 @route("/update/<id>")
 def get_update(id):
