@@ -65,19 +65,16 @@ def post_addPatient():
     patTravel = request.forms.get("patTravel")
     patDiseaseCode = request.forms.get("patDiseaseCode")
     patDocCode = request.forms.get("patDocCode")
-    
-    
-    db.add_Patient_document(patCode,patName,pSurName,patCountry,patAge,patStatus,patTravel,patDiseaseCode,patDocCode)
+        
+    db.add_Patient_document(patCode,patName,pSurName,patCountry,patAge,
+                            patStatus,patTravel,patDiseaseCode,patDocCode)
     redirect("/")
     
     
-
 @route("/delete/<id>")
 def get_delete(id):
     db.delete_item(id)
     redirect("/")
-
-
 
 
 @route("/viewPage/<disease_code>")
@@ -87,11 +84,29 @@ def get_view(disease_code):
     
 @route("/update/<id>")
 def get_update(id):
-    items = db.get_items(id)
+    items = db.get_items_patient(id)
     if len(items) != 1:
-        redirect("/list")
-    description = items[0]['description']
-    return template("update_item.tpl", id=id, description=description)
+       redirect("/")
+    #description = items[0]['patient_fname']
+    return template("updatePatient.tpl", id=id, sendPatientForUpdate=items)
+
+@post("/updatePatient")
+def post_updatePatient():
+    patCode = request.forms.get("patCode")
+    patName = request.forms.get("patName")
+    pSurName = request.forms.get("pSurName")
+    patCountry = request.forms.get("patCountry")
+    patAge = request.forms.get("patAge")
+    patStatus = request.forms.get("patStatus")
+    patTravel = request.forms.get("patTravel")
+    patDiseaseCode = request.forms.get("patDiseaseCode")
+    patDocCode = request.forms.get("patDocCode")
+    
+    id = request.forms.get("id")
+
+    db.update_Patient_document(id,patCode,patName,pSurName,patCountry,patAge,
+                            patStatus,patTravel,patDiseaseCode,patDocCode)
+    redirect("/")
 
 @post("/update")
 def post_update():

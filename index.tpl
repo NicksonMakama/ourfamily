@@ -29,11 +29,10 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
          <script type="text/javascript">
-            function myFunc(){
-
-                document.getElementById("title").innerHTML = "now";
-            }
-            function showMsg(){alert("Successfully Added to Database");}
+            
+            function showMsg(){
+                alert("Successfully Added to Database");
+                }
         </script>
 </body>
 </html>

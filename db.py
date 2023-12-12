@@ -94,11 +94,33 @@ def delete_item(id):
     items_collection = stopandemic_DB.patient
     items_collection.delete_one({"_id":ObjectId(id)})
 
+def get_items_patient(id=None):
+    items_collection = stopandemic_DB.patient
+    if id == None:
+        items = items_collection.find({})
+    else:
+        items = items_collection.find({"_id":ObjectId(id)})
+    items = list(items)
+    for item in items:
+        item["id"] = str(item["_id"])
+    return items
+
 def update_item(id, name):
     items_collection = stopandemic_DB.doctor
     where = {"_id": ObjectId(id)}
     updates = { "$set": { "Name": name } }
     items_collection.update_one(where, updates)
+
+def update_Patient_document(id,patCode,patName,pSurName,patCountry,patAge,
+                            patStatus,patTravel,patDiseaseCode,patDocCode):
+    items_collection = stopandemic_DB.patient
+    where = {"_id": ObjectId(id)}
+    updates = { "$set": {"patient_code":patCode,"patient_fname": patName, "patient_sname":pSurName,
+                         "patient_age":patAge, "patient_country":patCountry, "status":patStatus,
+                         "travel_history":patTravel, "disease_code":patDiseaseCode,"doctor_code":patDocCode
+                         }}
+    items_collection.update_one(where, updates)
+
 
 def test_setup_database():
     print("testing setup_database()")

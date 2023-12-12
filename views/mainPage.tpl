@@ -1,5 +1,5 @@
 <div id="title">
-    <h3>Welcome Doctor </h3>%{{signUpDoc}}
+    <h3>Welcome Doctor </h3>
     <p>This is a AI database system to help the world predict the possibiolity of the next Pandemic</p>
 </div>
 <div id="mainPage">
