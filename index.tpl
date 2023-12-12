@@ -14,6 +14,8 @@
             %include('nav.tpl')
             %if signUpDoc:
                 %include('doctorSignUp.tpl')
+            % elif addPatient:
+                %include('addPatient.tpl')
             %else:
                 %include('mainPage.tpl')
             %end

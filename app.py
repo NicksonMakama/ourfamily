@@ -13,7 +13,7 @@ def server_static(filename):
 @route("/")
 def goto_home():
     doctorData = db.get_items()
-    return template("index.tpl", sendDoctorData=doctorData, signUpDoc=False)
+    return template("index.tpl", sendDoctorData=doctorData, signUpDoc=False, addPatient=False )
 
 @route("/add")
 def get_add():
@@ -21,7 +21,11 @@ def get_add():
 
 @route("/doctorSignUp")
 def doctorSignUp():
-    return template("index.tpl",signUpDoc=True)
+    return template("index.tpl",signUpDoc=True, addPatient=False)
+
+@route("/addPatient")
+def doctorSignUp():
+    return template("index.tpl",signUpDoc=False, addPatient=True)
 
 @post("/add")
 def post_add():
@@ -39,7 +43,7 @@ def post_add():
 @route("/delete/<id>")
 def get_delete(id):
     db.delete_item(id)
-    redirect("/list")
+    redirect("/")
 
 
 

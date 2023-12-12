@@ -54,8 +54,10 @@ def get_itemsDiseasePatient(disease_code):
         },
         {
             "$project": {
-                "_id": 0,  # Exclude _id field
-                "patient_fname": 1  # Include patient_fname field
+                "_id": 1,  # Exclude _id field
+                "patient_fname": 1,  # Include patient_fname field
+                "patient_sname":1,
+                "patient_country":1
             }
         }
     ])
@@ -74,7 +76,7 @@ def add_Doctor_document(docCode,docName,surName,docCountry,patientCode):
 
 
 def delete_item(id):
-    items_collection = stopandemic_DB.doctor
+    items_collection = stopandemic_DB.patient
     items_collection.delete_one({"_id":ObjectId(id)})
 
 def update_item(id, name):

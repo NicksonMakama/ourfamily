@@ -31,7 +31,7 @@
                 <div id="mainActAddPatient" class="col-sm box">
                     <center>
                         <span class="bi bi-person"></span>
-                        <a href="" class="sectionTitles">Add Patient</a>
+                        <a href="/addPatient" class="sectionTitles">Add Patient</a>
                     </center>
                 </div>
                 <div id="mainActDoctor" class="col-sm box box2">
