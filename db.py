@@ -68,6 +68,11 @@ def add_item(name):
     items_collection = stopandemic_DB.doctor
     items_collection.insert_one({"Name":name})
 
+def add_Doctor_document(docCode,docName,surName,docCountry,patientCode):
+    items_collection = stopandemic_DB.doctor
+    items_collection.insert_one({"doctor_code":docCode,"doctor_fname":docName,"doctor_sname":surName,"doctor_country":docCountry,"patient_code":patientCode})   
+
+
 def delete_item(id):
     items_collection = stopandemic_DB.doctor
     items_collection.delete_one({"_id":ObjectId(id)})

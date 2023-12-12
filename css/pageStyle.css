@@ -1,9 +1,9 @@
-
+body{margin-left:0; padding:0;}
 h3{border:2px solid rgb(80, 6, 165);}
 
 #mainPage .box{background-color: rgb(38, 85, 236);
     border-radius:8px;
-    margin: 5px;
+    margin: 3px;
     padding: 5%;
     height: 120px;
 }
@@ -12,6 +12,7 @@ h3{border:2px solid rgb(80, 6, 165);}
     border: 2px solid blue;
     
 }
+
 #mainPage .box:hover a{color:blue;}
 #mainPage .box a{
     text-decoration: none;
@@ -26,3 +27,6 @@ h3{border:2px solid rgb(80, 6, 165);}
 
 #mainPage .sectionTitles{font-size: 20px; color:white;
     }
+
+#docSignUp img{widtsh:50%;
+                heisght:50%;}

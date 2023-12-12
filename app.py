@@ -25,9 +25,16 @@ def doctorSignUp():
 
 @post("/add")
 def post_add():
-    description = request.forms.get("description")
-    db.add_item(description)
-    redirect("/list")
+    docCode = request.forms.get("docCode")
+    docName = request.forms.get("docName")
+    surName = request.forms.get("surName")
+    docCountry = request.forms.get("docCountry")
+    patientCode = request.forms.get("patientCode")
+    
+    db.add_Doctor_document(docCode,docName,surName,docCountry,patientCode)
+    redirect("/doctorSignUp")
+    
+    
 
 @route("/delete/<id>")
 def get_delete(id):
