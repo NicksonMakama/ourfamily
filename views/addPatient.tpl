@@ -6,7 +6,7 @@
         
         <form method="POST" action="/addPatient" id="patForm">
             <div class="form-group">
-                <label for="patCode">Your Code number</label>
+                <label for="patCode">Patient Code</label>
                 <input name="patCode" type="text" id="patCode" class="form-control"/>
             </div>
             <div class="form-group">
@@ -23,27 +23,23 @@
                 <input name="patCountry" type="text" id="patCountry" class="form-control"/>
             </div>
             <div class="form-group">
-                <label for="patientCode">Enter a Code for your Patient</label>
-                <input name="patientCode" type="text" id="patientCode" class="form-control" placeholder="USA_P02"/>
-            </div>
-            <div class="form-group">
-                <label for="patAge">Country</label>
+                <label for="patAge">Age</label>
                 <input name="patAge" type="text" id="patAge" class="form-control"/>
             </div>
             <div class="form-group">
-                <label for="patStatus">Country</label>
+                <label for="patStatus">Status</label>
                 <input name="patStatus" type="text" id="patStatus" class="form-control"/>
             </div>
             <div class="form-group">
-                <label for="patTravel">Country</label>
+                <label for="patTravel">Travel History</label>
                 <input name="patTravel" type="text" id="patTravel" class="form-control"/>
             </div>
             <div class="form-group">
-                <label for="patDCode">Country</label>
-                <input name="patDCode" type="text" id="patDCode" class="form-control"/>
+                <label for="patDiseaseCode">Disease Code</label>
+                <input name="patDiseaseCode" type="text" id="patDiseaseCode" class="form-control"/>
             </div>
             <div class="form-group">
-                <label for="patDocCode">Country</label>
+                <label for="patDocCode">Doctor Code</label>
                 <input name="patDocCode" type="text" id="patDocCode" class="form-control"/>
             </div>
             

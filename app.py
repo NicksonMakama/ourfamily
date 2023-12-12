@@ -37,6 +37,22 @@ def post_add():
     
     db.add_Doctor_document(docCode,docName,surName,docCountry,patientCode)
     redirect("/doctorSignUp")
+
+@post("/addPatient")
+def post_add():
+    patCode = request.forms.get("patCode")
+    patName = request.forms.get("patName")
+    pSurName = request.forms.get("pSurName")
+    patCountry = request.forms.get("patCountry")
+    patAge = request.forms.get("patAge")
+    patStatus = request.forms.get("patStatus")
+    patTravel = request.forms.get("patTravel")
+    patDiseaseCode = request.forms.get("patDiseaseCode")
+    patDocCode = request.forms.get("patDocCode")
+    
+    
+    db.add_Patient_document(patCode,patName,pSurName,patCountry,patAge,patStatus,patTravel,patDiseaseCode,patDocCode)
+    redirect("/")
     
     
 

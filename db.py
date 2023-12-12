@@ -74,6 +74,15 @@ def add_Doctor_document(docCode,docName,surName,docCountry,patientCode):
     items_collection = stopandemic_DB.doctor
     items_collection.insert_one({"doctor_code":docCode,"doctor_fname":docName,"doctor_sname":surName,"doctor_country":docCountry,"patient_code":patientCode})   
 
+def add_Patient_document(patCode,patName,pSurName,patCountry,patAge,patStatus,patTravel,
+                         patDiseaseCode,patDocCode):
+     items_collection = stopandemic_DB.patient
+     items_collection.insert_one({"patient_code":patCode,"patient_fname":patName,
+                                  "patient_sname":pSurName,"patient_country":patCountry,
+                                  "patient_age":patAge,"status":patStatus,"travel_history":patTravel,
+                         "disease_code":patDiseaseCode,"doctor_code":patDocCode})
+
+
 
 def delete_item(id):
     items_collection = stopandemic_DB.patient
