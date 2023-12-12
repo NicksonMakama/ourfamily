@@ -13,7 +13,7 @@ def server_static(filename):
 @route("/")
 def goto_home():
     doctorData = db.get_items()
-    return template("index.tpl", sendDoctorData=doctorData, signUpDoc=False, addPatient=False )
+    return template("index.tpl", sendDoctorData=doctorData, signUpDoc=False, addPatient=False, addDisease=False )
 
 @route("/add")
 def get_add():
@@ -21,11 +21,16 @@ def get_add():
 
 @route("/doctorSignUp")
 def doctorSignUp():
-    return template("index.tpl",signUpDoc=True, addPatient=False)
+    return template("index.tpl",signUpDoc=True, addPatient=False, addDisease=False)
 
 @route("/addPatient")
-def doctorSignUp():
-    return template("index.tpl",signUpDoc=False, addPatient=True)
+def addPatient():
+    return template("index.tpl",signUpDoc=False, addPatient=True, addDisease=False)
+
+@route("/addDisease")
+def addDisease():
+    return template("index.tpl",signUpDoc=False, addPatient=False, addDisease=True)
+
 
 @post("/add")
 def post_add():
@@ -38,8 +43,19 @@ def post_add():
     db.add_Doctor_document(docCode,docName,surName,docCountry,patientCode)
     redirect("/doctorSignUp")
 
+@post("/addDisease")
+def post_addDisease():
+    diseaseCode = request.forms.get("diseaseCode")
+    diseaseName = request.forms.get("diseaseName")
+    description = request.forms.get("description")
+    medication = request.forms.get("medication")
+    treatment = request.forms.get("treatment")
+    
+    db.add_Disease_document(diseaseCode,diseaseName,description,medication,treatment)
+    redirect("/")
+
 @post("/addPatient")
-def post_add():
+def post_addPatient():
     patCode = request.forms.get("patCode")
     patName = request.forms.get("patName")
     pSurName = request.forms.get("pSurName")

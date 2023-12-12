@@ -36,32 +36,12 @@
                 </div>
                 <div id="mainActDoctor" class="col-sm box box2">
                     <center>
-                        <a href="" class="sectionTitles">Add Disease</a>
+                        <a href="/addDisease" class="sectionTitles">Add Disease</a>
                     </center>
                 </div>
             </div>
 
-            <div id="forMainForm" class="row">
-                <div id="Add-case-title">Add A Case</div>
-                <form>
-                    <div class="form-group">
-                        <label for="disease_code">Enter a code for this Disease</label>
-                        <input id="disease_code" type="text" class="form-control" placeholder="UNK_00"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="d_name">Disease Name</label>
-                        <input id="d_name" type="text" class="form-control" placeholder="UNKNOWN"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Describe the Symptoms</label>
-                        <textarea id="description" rows="4" cols="50" placeholder="UNKNOWN">
-                            Please give a brief description of the Symptoms
-                        </textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
+            
 
         </div>
 
