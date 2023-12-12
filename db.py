@@ -121,7 +121,38 @@ def update_Patient_document(id,patCode,patName,pSurName,patCountry,patAge,
                          }}
     items_collection.update_one(where, updates)
 
+def searchItem(searchItem):
+    
+    patients_collection = stopandemic_DB.patient
+    
+    result = patients_collection.aggregate([
+        {
+            "$search": {
+                "index": "case-insensitive-sort",
+                "text": {
+                    "path": "patient_fname",
+                    "query": searchItem
+                },
+                "sort": {
+                    "patient_fname": 1
+                }
+            }
+        },
+        {
+            "$limit": 5
+        },
+        {
+            "$project": {
+                "_id": 1,
+                "patient_fname": 1,
+                "patient_sname": 1
+            }
+        }
+    ])
 
+    return list(result)
+
+    
 def test_setup_database():
     print("testing setup_database()")
     setup_database()

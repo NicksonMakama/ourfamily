@@ -31,6 +31,12 @@ def addPatient():
 def addDisease():
     return template("index.tpl",signUpDoc=False, addPatient=False, addDisease=True)
 
+@post("/search")
+def search():
+    searchItem = request.forms.get("searchPatient")
+    searchResult = db.searchItem(searchItem)
+    print(searchResult)
+    return template("search.tpl", sendSearchResult = searchResult)
 
 @post("/add")
 def post_add():
