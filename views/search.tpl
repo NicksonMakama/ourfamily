@@ -1,6 +1,6 @@
  %include('nav.tpl')
  
-<h2> Patients Diagnose with Onchocerciasis</h2>
+<h2> Your Search Result</h2>
     <div class="row" id="cases-table">
         <div class="table-responsive">
             <table class="table">
@@ -23,6 +23,15 @@
                 </tbody>
 
             </table>
+            <div class="row"><center><h4>
+                
+                    Patient Name: Lisa Alex
+                    Country: Nigeria
+                    Diagnosed With: onchocerciasis
+                </h4>
+                <hr>
+                </center>
+            </div>
         </div>
     </div>
 

@@ -13,7 +13,8 @@ def server_static(filename):
 @route("/")
 def goto_home():
     doctorData = db.get_items()
-    return template("index.tpl", sendDoctorData=doctorData, signUpDoc=False, addPatient=False, addDisease=False )
+    return template("index.tpl", sendDoctorData=doctorData, signUpDoc=False, addPatient=False, 
+                    addDisease=False, aboutUs=False )
 
 @route("/add")
 def get_add():
@@ -21,15 +22,19 @@ def get_add():
 
 @route("/doctorSignUp")
 def doctorSignUp():
-    return template("index.tpl",signUpDoc=True, addPatient=False, addDisease=False)
+    return template("index.tpl",signUpDoc=True, addPatient=False, addDisease=False, aboutUs=False)
 
 @route("/addPatient")
 def addPatient():
-    return template("index.tpl",signUpDoc=False, addPatient=True, addDisease=False)
+    return template("index.tpl",signUpDoc=False, addPatient=True, addDisease=False, aboutUs=False)
 
 @route("/addDisease")
 def addDisease():
-    return template("index.tpl",signUpDoc=False, addPatient=False, addDisease=True)
+    return template("index.tpl",signUpDoc=False, addPatient=False, addDisease=True, aboutUs=False)
+
+@route("/about")
+def about():
+    return template("index.tpl",signUpDoc=False, addPatient=False, addDisease=False, aboutUs=True)
 
 @post("/search")
 def search():

@@ -122,13 +122,14 @@ def update_Patient_document(id,patCode,patName,pSurName,patCountry,patAge,
     items_collection.update_one(where, updates)
 
 def searchItem(searchItem):
-    
     patients_collection = stopandemic_DB.patient
-    
+    if "patient_fname_text" not in patients_collection.index_information():
+        patients_collection.create_index([("patient_fname", "text")], name="patient_fname_text")
+
     result = patients_collection.aggregate([
         {
             "$search": {
-                "index": "case-insensitive-sort",
+                "index": "text",
                 "text": {
                     "path": "patient_fname",
                     "query": searchItem

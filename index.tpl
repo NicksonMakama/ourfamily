@@ -16,6 +16,8 @@
                 %include('doctorSignUp.tpl')
             % elif addPatient:
                 %include('addPatient.tpl')
+            % elif aboutUs:
+                %include('about.tpl')
             % elif addDisease:
                 %include('addDisease.tpl')
             %else:

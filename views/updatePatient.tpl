@@ -2,7 +2,7 @@
 
 
 <div id="docSignUp" class="row">
-    <h2>Patient Form</h2>
+    <h2>Update Form</h2>
     <p> Fill patient form:
     <div class="col-sm">
         
